@@ -1,36 +1,6 @@
 
 
-<?php
-
-$wng_connection = mysql_connect('localhost','root','');
-
-if(!$wng_connection) {
-
-die ("connection failed ".mysql_error());
-
-}
-
-else {
-
-echo ("<hr>");
-
-}
-
-if(!mysql_select_db('umawings',$wng_connection)) {
-   die("Connection Failed <hr>");
-}
-
-$query='select * from wng_post';
-$abc=mysql_query($query);
-$abcA=mysql_fetch_array($abc);
- 
-echo $abcA[0]."<br> <strong> Heading </strong>";
-echo $abcA[1]."<br> <strong> Body </strong>";
-echo $abcA[2]."<br><strong> Created on  </strong>";
-echo $abcA[3]."<br><strong> Created by </strong>";
-echo $abcA[4]."<br>";
-
-?>
+<?php include "functions.php";?>
 
 
 
