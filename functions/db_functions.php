@@ -1,27 +1,32 @@
 <?php 
 
-function db_connect() {
+function database_connect() {
+/*
 
-	$connection=mysql_connect('localhost','root','');
-		
-		if(!connection) {
+mysql connect
 
-			return false;
+*/
 
-	}
+$connect =mysql_connect('localhost','root',''); // connecting the database from localhost
 
+if(!$connect) {
 
-	if(!mysql_select_db('umawings',$connection))
-	{
-
-	return false;
-
-	}
+die('ERROR, connecting to database server'.mysql_error());
 
 }
+ 
+ /* selecting the database */
+if(!mysql_select_db('umawings',$connect)) {
 
-db_connect();
+	die("Eror, connecting to the selected database ".mysql_error()); 
+}
 
-echo $con;
+
+
+} // function close
+
+
+
+database_connect();
 
 ?>
