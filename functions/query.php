@@ -71,16 +71,19 @@ echo "Row Deleted";
 }
 }
 
+/*
 
 
+
+an example test run of the scripts 
 
 //select();
 //insert();
 //update();
 //delete();
 
-//---------------------now some serious functions------------------------------------//
 
+*/ 
 
 function create_post($params){
 
@@ -112,7 +115,10 @@ function create_post($params){
 
 }
 
-/* create_post(array('wng_title'=>'this is the tittle from the function',
+/* 
+		***calling of the function create_post by example*** 
+
+create_post(array('wng_title'=>'this is the tittle from the function',
 				  'wng_body'=>'This is the body',
 				  'wng_user_id'=>1));
 */
@@ -154,10 +160,114 @@ function update_post($params){
 
 }
 
+
+/*
+
+		***calling of the function update_post by example*** 
+
+
 update_post(array('wng_title'=>'this is the updated post',
 				  'wng_body'=>'This is the updated body',
 				  'wng_user_id'=>1,
-				  'wng_id'=>177));
+				  'wng_id'=>174));
+
+*/
 
 
-?>
+
+
+function delete_post($wng_id){
+
+
+				/*
+
+				*deletes a post 
+				*@param type : int name: $params
+				*@returns : bool
+
+				*/
+
+			$connection = database_connect();
+			$query=sprintf("delete from wng_post
+				where wng_id=%s",
+				mysql_real_escape_string($wng_id)
+				);
+
+
+					$result=mysql_query($query);
+					if(!$result) {
+						return false;
+					}
+					else {
+					return true;
+					}
+
+}
+
+	/*
+		***calling of the function delete_post()  by example*** 
+
+
+	delete_post(178);
+
+	*/
+
+
+function select_post($id){
+
+
+	/*
+
+				*selects a post 
+				*@param type: int name: $id (it contains the id number of the post which we want to select)
+				*@returns : array of post from database
+
+	*/
+
+		$connection = database_connect();
+				$query=sprintf("SELECT wng_post.wng_title, wng_post.wng_body, wng_post.wng_id, wng_users.wng_user_name
+			FROM wng_post, wng_users
+			WHERE wng_post.wng_user_id = wng_post.wng_user_id and wng_post.wng_id=%s",
+			mysql_real_escape_string($id));
+
+			$result=mysql_query($query);
+			$number_of_posts=mysql_num_rows($result);
+			if($number_of_posts==0) {
+			return false;
+			}
+			else {
+					$row=mysql_fetch_array($result);
+					return $row;
+			}
+
+		
+}
+
+/*
+
+
+		***calling of the function selected_post example*** 
+
+	$post=select_post(233);
+	if($post){
+
+
+		echo '<h2>'.$post['wng_title'].'</h2>';
+		echo '<h2> '.$post['wng_body'].'</h2>';
+		echo '<h2>'.$post['wng_user_name'].'</h2>';
+	    echo '<h2> '.$post['wng_id'].'</h2>';
+	    echo '<hr>';
+}
+
+		else {
+
+			echo "<h2>there's no post in the database</h2>";
+		}
+
+
+
+*/ 
+
+
+		?>
+
