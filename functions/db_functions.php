@@ -7,7 +7,7 @@ function database_connect() {
 * @function name -> database_connect() 
 * @parameters -> none
 * @returns a boolean and resource 
-* /
+*/
 
 $connect =mysql_connect('localhost','root',''); // connecting the database from localhost
 
