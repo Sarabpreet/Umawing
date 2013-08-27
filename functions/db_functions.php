@@ -9,9 +9,12 @@ function database_connect() {
 * @returns a boolean and resource 
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 8f6225725e1ebb122bca849f0e0d1cddf16a7d54
+=======
+>>>>>>> 4ccc4bcc0d7204184abf9c64bbd0acaac0aed1cf
 
 $connect =mysql_connect('localhost','root',''); // connecting the database from localhost
 
