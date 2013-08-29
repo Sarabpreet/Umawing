@@ -1,6 +1,18 @@
 
 
-<?php include "functions/functions.php";?>
+<?php include "functions/functions.php";
+
+	$url=$_SERVER['REQUEST_URI'];
+
+	$url=str_replace('/umawings/','',$url);
+	
+	//posts/2
+
+
+	preg_match('/^posts\/(?P<id>\d+)$/',$url,$matches);
+
+	print_r($matches);
+?>
 
 
 
