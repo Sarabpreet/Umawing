@@ -5,14 +5,43 @@
 	$url=$_SERVER['REQUEST_URI'];
 
 	$url=str_replace('/umawings/','',$url);
+
+
 	
-	//posts/2
+	//posts/2/edit
 
 
-	preg_match('/^posts\/(?P<id>\d+)$/',$url,$matches);
+
+
+$routes=array(
+
+  array('url'=>'/^posts\/(?P<id>\d+)$/','controller'=>'posts','view'=>'show'),
+  array('url'=>'/^posts\/(?P<id>\d+)\/edit$/','controller'=>'posts','view'=>'show')
+				);
+
+$params=array();
+
+foreach ($routes as $url => $route) {
+
+	echo "looking for match<br/>";
+
+	if(preg_match($route['url'],$url,$matches)) {
+
+	$params=array_merge($params,$matches);
+
+	echo "matchced found";
+	}
+
+	
+}
+
+//preg_match('/^posts\/(?P<id>\d+)\/edit$/',$url,$matches);
 
 	print_r($matches);
 ?>
+
+
+
 
 
 
@@ -54,23 +83,137 @@
 </head>
 <body>
 
-
+<div class="topm"></div>
 
 	<!-- Primary Page Layout
 	================================================== -->
 
 	<!-- Delete everything in this .container and get started on your own site! -->
 
+
+
 		<div class="container">
 
-			<h1>This is wings!</h1>
-				<div class="one-third column"> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, quam, esse consectetur laborum accusantium minima saepe doloribus beatae aliquam amet explicabo sint unde corporis eligendi tenetur deserunt illum assumenda! Ipsa!</p></div>
-				<div class="one-third column"> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, quam, esse consectetur laborum accusantium minima saepe doloribus beatae aliquam amet explicabo sint unde corporis eligendi tenetur deserunt illum assumenda! Ipsa!</p></div>
-				<div class="one-third column"> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, quam, esse consectetur laborum accusantium minima saepe doloribus beatae aliquam amet explicabo sint unde corporis eligendi tenetur deserunt illum assumenda! Ipsa!</p></div>
+	
+	<h1 class="logo three column" >uma wings</h1>
 
 
-		</div>
 
+			<nav class="six column offset-by-six">
+
+			<ul>
+			<li><a href="#">About</a></li>
+			<li><a href="#">how it works</a></li>
+			<li><a href="#">sign up</a></li>
+			</ul>
+
+			</nav>
+
+<section class="one-third columns">
+	
+
+	<h2>introducing something cool</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni nisi accusantium ipsa facere maxime inventore perferendis voluptatum quas consequuntur laudantium. Veniam, doloribus doloremque quis molestiae deleniti numquam possimus eaque beatae.</p>
+</section>
+		
+	<section class="one-third column">
+	
+
+	<h3>been here before?: login</h3>
+
+	<form action="#">
+		
+<input type="email">
+<input type="password">
+<input type="submit">
+	</form>
+
+</section>
+		
+
+	<section class="one-third column">
+
+	<h3>been here before?: login</h3>
+
+			<form action="#">
+				
+		<input type="email">
+		<input type="password">
+		<input type="submit">
+			</form>
+
+	</section>
+
+
+
+	<section class="one-third column">
+		
+	<h3>new to uma wings? : <strong>sign up here.</strong></h3>
+
+	<form action="#">
+
+<input type="text">		
+<input type="email">
+<input type="password">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aperiam, amet, deserunt repellat quae eveniet aliquid iusto tempora dolores a fugiat necessitatibus adipisci excepturi molestias quasi nostrum magnam sequi numquam.</p>
+<input type="submit">
+	</form>
+
+</section>
+
+
+	</div>
+
+
+<div class="container">
+	
+<section class="one-third column">
+	
+<h4>topic...</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, nobis, veritatis, reiciendis aliquam perferendis maxime debitis possimus incidunt et blanditiis aperiam cumque nam! Aliquam, error sequi neque quos repellendus veritatis.</p>
+</section>
+
+<section class="one-third column">
+	
+<h4>topic...</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, nobis, veritatis, reiciendis aliquam perferendis maxime debitis possimus incidunt et blanditiis aperiam cumque nam! Aliquam, error sequi neque quos repellendus veritatis.</p>
+</section>
+
+<section class="one-third column">
+	
+<h4>topic...</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, nobis, veritatis, reiciendis aliquam perferendis maxime debitis possimus incidunt et blanditiis aperiam cumque nam! Aliquam, error sequi neque quos repellendus veritatis.</p>
+</section>
+
+
+
+
+</div>
+
+<div class="container">
+	
+<footer class="sixteen columns">
+	
+	<nav>
+		
+
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Login</a></li>
+			<li><a href="#">Career</a></li>
+			<li><a href="#">Developers</a></li>
+			<li><a href="#">Statistics</a></li>
+		</ul>
+	</nav>
+
+<div class="credit">
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia provident est minus veritatis maiores quam ipsam. Ipsam, inventore, consequuntur optio esse eum consequatur suscipit velit ab laudantium magnam autem voluptate?</p>
+</div>
+</footer>
+
+</div>
 
 <!-- End Document
 ================================================== -->
