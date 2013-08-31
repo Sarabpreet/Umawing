@@ -50,12 +50,12 @@ foreach ($routes as $urls => $route) {
 
 //preg_match('/^posts\/(?P<id>\d+)\/edit$/',$url,$matches);
 
-<<<<<<< HEAD
+
 //echo $route['controller'];
 //include($_SERVER['DOCUMENT_ROOT'].'umawings/controller/'.$route['controller'].'.php');
-=======
+
 	print_r($matches);
->>>>>>> dc15be2eee853f2c9b2e7e121559a3d28c470256
+
 
 
 
