@@ -2,13 +2,13 @@
 
 include($_SERVER['DOCUMENT_ROOT'].'umawings/models/post.php');
 
-$action = $_GET['action'];
+//$action = $_GET['action'];
 
-switch($action) {
+switch($route['view']) {
 
 case "show": 
- 	$id=$_GET['id'];
-	$post=select_post($id);
+ 	//$id=$_GET['id'];
+	$post=select_post($params['id']);
 	include($_SERVER['DOCUMENT_ROOT'].'umawings/view/post.php');
 	break;
 
