@@ -1,6 +1,6 @@
 <?php 
 
-//routes url to controller and view 
+			//routes url to controller and view 
 
 $routes=array(
 
@@ -17,6 +17,12 @@ $routes=array(
 				
 			);
 
+//Database Connection Params
+
+define('HOST','localhost');
+define('USERNAME','root');
+define('PASSWORD','');
+define('DATABASE','umawings');
 
 
 //$_SERVER['DOCUMENT_ROOT'].'umawings/controllers'
@@ -36,10 +42,16 @@ define('APP_ROOT','umawings');
 define('MODEL_PATH',SERVER_ROOT.APP_ROOT.DS.'models'.DS);
 define('VIEW_PATH',SERVER_ROOT.APP_ROOT.DS.'view'.DS);
 define('CONTROLLER_PATH',SERVER_ROOT.APP_ROOT.DS.'controller'.DS);
+define('FRONTEND_PATH',SERVER_ROOT.APP_ROOT.DS.'frontend'.DS);
 
 /*
 echo MODEL_PATH."<br>";
 echo VIEW_PATH."<br>";
 echo CONTROLLER_PATH;
 */
+
+//dbinclude 
+
+include "database.php";
+
 ?>

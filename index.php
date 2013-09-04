@@ -1,67 +1,68 @@
 
 
-<?php include "functions/functions.php";
+<?php 
+
+		//database params 
+		// routes of the documents
+		// directory change..
+		 
+		//include "functions/functions.php";
 
 
 
 
-	
-//posts/2/edit
-//preg_match('/^posts\/(?P<id>\d+)\/edit$/',$url,$matches);
-//echo $route['controller'];
-//include($_SERVER['DOCUMENT_ROOT'].'umawings/controller/'.$route['controller'].'.php');
+
+//importing an the routes's array & defining few variables
+
+	include('config.php');
 
 
+		function dispatcher($routes) {
+
+		//requested url
+
+			$url=$_SERVER['REQUEST_URI'];
+
+		//removes application root from url
+			$url=str_replace('/'.APP_ROOT.'/','',$url);
+
+		//holds the named captures
+			$params=array();
+
+		//becomes true if $route['url'] matches
+
+			$route_match=false;
+
+		//loops over routes, looking for a match ... 
+		foreach ($routes as $urls => $route) {
 
 
-include('config.php');
+		//if match found, appends $matches to $params
+		//sets route_match to true and exits the loop.
+
+					if(preg_match($route['url'],$url,$matches)) {
+					$params=array_merge($params,$matches);
+					$route_match=true;
+					include(CONTROLLER_PATH.$route['controller'].'.php');
+					break;
+					}
+				}
 
 
-function dispatcher($routes) {
+			if(!$route_match) {
 
-
-//requested url
-
-	$url=$_SERVER['REQUEST_URI'];
-
-//removes application root from url
-	$url=str_replace('/'.APP_ROOT.'/','',$url);
-
-//holds the named captures
-	$params=array();
-
-//becomes true if $route['url'] matches
-
-	$route_match=false;
-
-//loops over routes, looking for a match ... 
-foreach ($routes as $urls => $route) {
-
-
-//if match found, appends $matches to $params
-//sets route_match to true and exits the loop.
-
-			if(preg_match($route['url'],$url,$matches)) {
-			$params=array_merge($params,$matches);
-			$route_match=true;
-			include($_SERVER['DOCUMENT_ROOT'].'umawings/controller/'.$route['controller'].'.php');
-			break;
+					include(FRONTEND_PATH.'home.php');
+					exit('no route found');
 			}
+
+		//include($_SERVER['DOCUMENT_ROOT'].'umawings/controller/'.$route['controller'].'.php');
+
 		}
 
 
-	if(!$route_match) {
-			exit('no route found');
-	}
-
-//include($_SERVER['DOCUMENT_ROOT'].'umawings/controller/'.$route['controller'].'.php');
-
-}
+	dispatcher($routes); //calling the dispacth function
 
 
 
-dispatcher($routes);
-
-	//include($_SERVER['DOCUMENT_ROOT'].'umawings/frontend/home.php');
 
 ?>
