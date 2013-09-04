@@ -4,6 +4,14 @@
 
 $routes=array(
 
+			
+		//posts/2/edit
+		//preg_match('/^posts\/(?P<id>\d+)\/edit$/',$url,$matches);
+		//echo $route['controller'];
+		//include($_SERVER['DOCUMENT_ROOT'].'umawings/controller/'.$route['controller'].'.php');
+
+
+
   array('url'=>'/^posts\/(?P<id>\d+)$/','controller'=>'posts','view'=>'show'),
   array('url'=>'/^posts\/(?P<id>\d+)\/edit$/','controller'=>'posts','view'=>'show')
 				
@@ -18,7 +26,6 @@ define('SERVER_ROOT',$_SERVER['DOCUMENT_ROOT']);
 //Directory Structure 
 
 define('DS','/');
-
 
 //Application Directory 
 

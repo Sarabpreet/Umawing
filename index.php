@@ -6,10 +6,8 @@
 
 
 	
-	//posts/2/edit
-
+//posts/2/edit
 //preg_match('/^posts\/(?P<id>\d+)\/edit$/',$url,$matches);
-
 //echo $route['controller'];
 //include($_SERVER['DOCUMENT_ROOT'].'umawings/controller/'.$route['controller'].'.php');
 
@@ -34,7 +32,7 @@ function dispatcher($routes) {
 
 //becomes true if $route['url'] matches
 
-	$route_math=false;
+	$route_match=false;
 
 //loops over routes, looking for a match ... 
 foreach ($routes as $urls => $route) {
@@ -52,7 +50,7 @@ foreach ($routes as $urls => $route) {
 		}
 
 
-	if(!route_match) {
+	if(!$route_match) {
 			exit('no route found');
 	}
 
@@ -62,7 +60,7 @@ foreach ($routes as $urls => $route) {
 
 
 
-dispatcher();
+dispatcher($routes);
 
 	//include($_SERVER['DOCUMENT_ROOT'].'umawings/frontend/home.php');
 
