@@ -4,7 +4,9 @@
 
 
 
-database_connect(); //calling database_connect
+database_connect(); 
+
+//calling database_connect
 
 
 
@@ -111,7 +113,7 @@ function select_post($id){
 
 	*/
 
-		$connection = database_connect();
+			$connection = database_connect();
 			$query=sprintf("SELECT wng_post.wng_title, wng_post.wng_body, wng_post.wng_id, wng_users.wng_user_name
 			FROM wng_post, wng_users
 			WHERE wng_post.wng_user_id = wng_post.wng_user_id and wng_post.wng_id=%s",

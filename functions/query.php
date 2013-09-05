@@ -213,16 +213,10 @@ function delete_post($wng_id){
 	*/
 
 
-function select_post($id){
 
 
-	/*
 
-				*selects a post 
-				*@param type: int name: $id (it contains the id number of the post which we want to select)
-				*@returns : array of post from database
 
-	*/
 
 		$connection = database_connect();
 				$query=sprintf("SELECT wng_post.wng_title, wng_post.wng_body, wng_post.wng_id, wng_users.wng_user_name

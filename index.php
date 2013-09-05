@@ -56,6 +56,10 @@
 			}
 
 		//include($_SERVER['DOCUMENT_ROOT'].'umawings/controller/'.$route['controller'].'.php');
+	
+	include(CONTROLLER_PATH.$route['controller'].'.php');
+	include(FRONTEND_PATH.'/post.php');
+
 
 		}
 
