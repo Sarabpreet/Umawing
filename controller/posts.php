@@ -11,10 +11,12 @@ switch($route['view']) {
 case "show": 
  	//$id=$_GET['id'];
 	$post=select_post($params['id']);
-	include(VIEW_PATH.'/post.php');
+
+//	include(VIEW_PATH.'/post.php');
+
 	break;
 
-case "new": 
+case "edit": 
 
 	echo "this is a new action";
 

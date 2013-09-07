@@ -10,12 +10,12 @@ $routes=array(
 		//echo $route['controller'];
 		//include($_SERVER['DOCUMENT_ROOT'].'umawings/controller/'.$route['controller'].'.php');
 
-
-
-  array('url'=>'/^posts\/(?P<id>\d+)$/','controller'=>'posts','view'=>'show'),
-  array('url'=>'/^posts\/(?P<id>\d+)\/edit$/','controller'=>'posts','view'=>'show')
-				
-			);
+		  		               array('url' => '/^posts\/(?P<id>\d+)$/', 'controller' => 'posts', 'view' => 'show'),
+									 array('url' => '/^posts\/(?P<id>\d+)\/edit$/', 'controller' => 'posts', 'view' => 'edit'),
+									 array('url' => '/^posts\/new$/', 'controller' => 'posts', 'view' => 'new'),
+									 array('url' => '/^posts\/create$/', 'controller' => 'posts', 'view' => 'create')
+									   );
+	
 
 //Database Connection Params
 

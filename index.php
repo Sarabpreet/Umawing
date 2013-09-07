@@ -17,7 +17,7 @@
 	include('config.php');
 
 
-		function dispatcher($routes) {
+	function dispatcher($routes) {
 
 		//requested url
 
@@ -43,7 +43,7 @@
 					if(preg_match($route['url'],$url,$matches)) {
 					$params=array_merge($params,$matches);
 					$route_match=true;
-					include(CONTROLLER_PATH.$route['controller'].'.php');
+				
 					break;
 					}
 				}
@@ -51,21 +51,37 @@
 
 			if(!$route_match) {
 
-					include(FRONTEND_PATH.'home.php');
+				//include(FRONTEND_PATH.'home.php');
 					exit('no route found');
+
 			}
 
 		//include($_SERVER['DOCUMENT_ROOT'].'umawings/controller/'.$route['controller'].'.php');
 	
 	include(CONTROLLER_PATH.$route['controller'].'.php');
-	include(FRONTEND_PATH.'/post.php');
+	
+			if(file_exists(VIEW_PATH.'posts'.DS.$route['view'].'.php'))
+		{
+				// if file is in the directory, then show that page..
+		    include(VIEW_PATH.'posts'.DS.$route['view'].'.php');
 
+		}
+		else
+		{
+			// include default layout
+		  
+		  include(VIEW_PATH.'layouts'.DS.'application.php');
+
+		}
+
+
+	
+	//include(VIEW_PATH.$route['contoller'].$route['view'].'.php');
 
 		}
 
 
 	dispatcher($routes); //calling the dispacth function
-
 
 
 
