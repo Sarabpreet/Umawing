@@ -9,19 +9,25 @@ include(MODEL_PATH.'post.php');
 switch($route['view']) {
 
 case "show": 
- 	//$id=$_GET['id'];
-	$post=select_post($params['id']);
 
-//	include(VIEW_PATH.'/post.php');
+	$post=select_post($params['id']);
 
 	break;
 
 case "edit": 
 
-	echo "this is a new action";
 
 	break;
 
+case "new": 
+
+
+	break;
+
+case "create": 
+
+
+	break;
 }
 
 

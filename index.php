@@ -2,7 +2,7 @@
 
 <?php 
 
-		//database params 
+		// database params 
 		// routes of the documents
 		// directory change..
 		 
@@ -26,8 +26,11 @@
 		//removes application root from url
 			$url=str_replace('/'.APP_ROOT.'/','',$url);
 
-		//holds the named captures
-			$params=array();
+		//holds the named captures and post data.
+			$params=parse_params();
+
+			//removes query string from url (ie from abc.com?abc=k acts like abc.com)
+$url=str_replace('?'.$_SERVER['QUERY_STRING'],'',$url);
 
 		//becomes true if $route['url'] matches
 
@@ -43,7 +46,6 @@
 					if(preg_match($route['url'],$url,$matches)) {
 					$params=array_merge($params,$matches);
 					$route_match=true;
-				
 					break;
 					}
 				}
@@ -60,19 +62,23 @@
 	
 	include(CONTROLLER_PATH.$route['controller'].'.php');
 	
-			if(file_exists(VIEW_PATH.'posts'.DS.$route['view'].'.php'))
+
+		if(file_exists(VIEW_PATH.'layouts'.DS.$route['controller'].'.php'))
 		{
 				// if file is in the directory, then show that page..
-		    include(VIEW_PATH.'posts'.DS.$route['view'].'.php');
+		include(VIEW_PATH.'layouts'.DS.$route['controller'].'.php');
 
 		}
 		else
 		{
-			// include default layout
+			// include default layout or the 404 page
 		  
 		  include(VIEW_PATH.'layouts'.DS.'application.php');
 
 		}
+
+
+
 
 
 	
@@ -84,5 +90,25 @@
 	dispatcher($routes); //calling the dispacth function
 
 
+/*
+returns an array of $_POST
+returns an array
 
+*/
+
+function parse_params(){
+
+$params=array();
+
+	if(!empty($_POST)){
+	$params=array_merge($params,$_POST);
+}
+
+if(!empty($_GET)){
+	$params=array_merge($params,$_GET);
+}
+
+
+	return $params;
+}
 ?>
