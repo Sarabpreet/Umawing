@@ -18,4 +18,4 @@
 
 		?>
 
-<h2>this is the show.php page</h2>
+<h2>this is the posts.php page</h2>

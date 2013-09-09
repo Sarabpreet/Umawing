@@ -6,10 +6,6 @@
 		// routes of the documents
 		// directory change..
 		 
-		//include "functions/functions.php";
-
-
-
 
 
 //importing an the routes's array & defining few variables
@@ -17,7 +13,46 @@
 	include('config.php');
 
 
+
+function parse_params(){
+
+/*
+returns an array of $_POST
+returns an array
+
+*/
+
+
+$params=array();
+
+	if(!empty($_POST)){
+	$params=array_merge($params,$_POST);
+}
+
+if(!empty($_GET)){
+	$params=array_merge($params,$_GET);
+}
+
+
+	return $params;
+}
+
+
 	function dispatcher($routes) {
+
+			/*
+	
+	checks the requested url, removes the application root from url, 
+	holds the named captures get and post data
+	becomes true if $route['url'] matchs,
+	loops over routes, looking for a match
+
+	returns a boolean if the requested url is true and gives back the requested page.
+
+	if false, it returns a 404 with an error message.
+
+
+	*/
 
 		//requested url
 
@@ -58,8 +93,6 @@ $url=str_replace('?'.$_SERVER['QUERY_STRING'],'',$url);
 
 			}
 
-		//include($_SERVER['DOCUMENT_ROOT'].'umawings/controller/'.$route['controller'].'.php');
-	
 	include(CONTROLLER_PATH.$route['controller'].'.php');
 	
 
@@ -77,38 +110,11 @@ $url=str_replace('?'.$_SERVER['QUERY_STRING'],'',$url);
 
 		}
 
-
-
-
-
-	
-	//include(VIEW_PATH.$route['contoller'].$route['view'].'.php');
-
 		}
 
 
 	dispatcher($routes); //calling the dispacth function
 
 
-/*
-returns an array of $_POST
-returns an array
 
-*/
-
-function parse_params(){
-
-$params=array();
-
-	if(!empty($_POST)){
-	$params=array_merge($params,$_POST);
-}
-
-if(!empty($_GET)){
-	$params=array_merge($params,$_GET);
-}
-
-
-	return $params;
-}
 ?>

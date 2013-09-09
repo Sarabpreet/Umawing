@@ -1,7 +1,6 @@
 <?php 
 
 
-
 include(MODEL_PATH.'post.php');
 
 //$action = $_GET['action'];
@@ -26,6 +25,10 @@ case "new":
 
 case "create": 
 
+if(create_post($params['wng_post'])) {
+
+echo "successfully created a post";
+}
 
 	break;
 }
