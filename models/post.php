@@ -12,7 +12,6 @@ database_connect();
 
 
 
-
 function select_post($id){
 
 

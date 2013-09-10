@@ -13,8 +13,9 @@ case "show":
 
 	break;
 
-case "edit": 
+case "index": 
 
+	$posts=select_post();
 
 	break;
 
@@ -25,10 +26,10 @@ case "new":
 
 case "create": 
 
-if(create_post($params['wng_post'])) {
+	if(create_post($params['wng_post'])) {
 
-echo "successfully created a post";
-}
+	echo "successfully created a post";
+	}
 
 	break;
 }
@@ -37,3 +38,4 @@ echo "successfully created a post";
 
 
 		?>
+
