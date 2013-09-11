@@ -15,7 +15,8 @@ case "show":
 
 case "index": 
 
-	$posts=select_post();
+	$posts=list_posts();
+
 
 	break;
 
@@ -32,6 +33,8 @@ case "create":
 	}
 
 	break;
+
+
 }
 
 

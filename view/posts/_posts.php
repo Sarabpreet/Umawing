@@ -1,21 +1,19 @@
-<?php 
 
 
-echo "whatsup";
-/*
-	if($post){
+<div class="post">
+	
 
-		echo '<h2>'.$post['wng_title'].'</h2>';
-		echo '<h2> '.$post['wng_body'].'</h2>';
-		echo '<h2>'.$post['wng_user_name'].'</h2>';
-	    echo '<h2> '.$post['wng_id'].'</h2>';
-	    echo '<br>';
-	}
+	<h2><?php echo $post['wng_title']?></h2>
+	<div class="body">
+	
+	<?php echo $post['wng_body'] ?>
 
-		else {
+	</div>
+	<div class="username">
+		
+		<?php echo $post['wng_user_name'] ?>
+	</div>
+</div>
 
-			echo "<h2>there's no post in the database</h2>";
-		}
 
-*/
-		?>
+	

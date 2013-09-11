@@ -10,6 +10,32 @@ database_connect();
 
 
 
+	/**
+	 * returns array of posts from database
+	 * @return array
+	 */
+	function list_posts()
+	{
+		  $connection =database_connect();
+			
+	    $query = 'SELECT `wng_id`, `wng_title`, `wng_body`, `wng_created_at`, `wng_user_id` FROM `wng_post` WHERE 1'; 
+
+
+			
+			$result = mysql_query($query);		
+			
+			$number_of_posts = mysql_num_rows($result);
+			if ($number_of_posts == 0) 
+			{
+			  return false;	
+			}
+			
+			$result = mysql_num_rows($result);
+			
+			return $result;
+			
+	}
+	
 
 
 function select_post($id){
@@ -39,10 +65,7 @@ function select_post($id){
 					return $row;
 			}
 
-		
-}
-
-
+		}
 
 /*
 

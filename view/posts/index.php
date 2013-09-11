@@ -1,16 +1,13 @@
+<?php echo "post listing...." ?>
+
 <?php 
 
+for($postsize=0;$postsize==$posts;$postsize++) {
 
 
-<?php if($posts): ?>
-
-	<?php foreach($posts as $post):
 
 	include('_posts.php');
-	endforeach; ?>
-
-<?php endif;?>
-?>
+}
 
 
-
+ ?>
