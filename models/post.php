@@ -12,13 +12,28 @@ database_connect();
 
 	/**
 	 * returns array of posts from database
-	 * @return array
-	 */
+	 * 
+	*/
+
 	function list_posts()
 	{
-		  $connection =database_connect();
+		  $connection = database_connect();
 			
-	    $query = 'SELECT `wng_id`, `wng_title`, `wng_body`, `wng_created_at`, `wng_user_id` FROM `wng_post` WHERE 1'; 
+	    $query1 ="SELECT * FROM `wng_post` LIMIT 0, 30 ";
+
+
+	    $query2="select wng_post.wng_id as wng_id, wng_post.wng_title, wng_post.wng_body, wng_post.wng_user_id, wng_users.wng_user_name 
+	              from 
+								  wng_post, wng_users
+							  where 
+									 wng_post.wng_user_id = wng_users.wng_id
+								 order
+								    by wng_post.wng_id desc";
+
+
+$query="SELECT wng_post.wng_id as wng_id,wng_post.wng_title, wng_post.wng_body, wng_post.wng_user_id, 
+		wng_users.wng_user_name from wng_post,wng_users where wng_post.wng_user_id=wng_users.wng_user_id order by wng_post.wng_id desc";
+
 
 
 			
@@ -30,12 +45,16 @@ database_connect();
 			  return false;	
 			}
 			
-			$result = mysql_num_rows($result);
+			$result = result_to_array($result);
 			
 			return $result;
 			
 	}
 	
+	 
+	
+
+
 
 
 function select_post($id){

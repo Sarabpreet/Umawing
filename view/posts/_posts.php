@@ -1,7 +1,7 @@
 
 
 <div class="post">
-	
+
 
 	<h2><?php echo $post['wng_title']?></h2>
 	<div class="body">

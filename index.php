@@ -1,6 +1,9 @@
-
-
 <?php 
+
+//starting a session 
+
+session_start();
+
 
 		// database params 
 		// routes of the documents
@@ -109,6 +112,11 @@ $url=str_replace('?'.$_SERVER['QUERY_STRING'],'',$url);
 		  include(VIEW_PATH.'layouts'.DS.'application.php');
 
 		}
+
+
+$_SESSION['echo']['notice']="";
+$_SESSION['echo']['warning']="";
+
 
 		}
 

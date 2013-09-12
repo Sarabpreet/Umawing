@@ -28,6 +28,7 @@ define('HOST','localhost');
 define('USERNAME','root');
 define('PASSWORD','');
 define('DATABASE','umawings');
+define("WEBSITE",'http://localhost/');
 
 
 //$_SERVER['DOCUMENT_ROOT'].'umawings/controllers'
@@ -58,5 +59,6 @@ echo CONTROLLER_PATH;
 //dbinclude 
 
 include "database.php";
+include"controller.php";
 
 ?>

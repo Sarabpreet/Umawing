@@ -44,11 +44,23 @@ $path='frontend/';
 
 <h2>Application's Page OR Default Page</h2>
 
+<?php if($_SESSION['echo']['notice']) {
+
+echo '<div class="notice">';
+echo $_SESSION['echo']['notice'];
+echo '</div>';
+
+
+}
+
+ ?>
 <?php 
 
 
 include(VIEW_PATH.$route['controller'].DS.$route['view'].'.php');
 ?>
+
+
 
 <!-- End Document
 ================================================== -->

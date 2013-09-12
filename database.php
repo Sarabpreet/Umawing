@@ -23,4 +23,19 @@ function database_connect() {
 } // function close
 
 
+
+  function result_to_array($result)
+	{
+	  $result_array = array();
+		for ($i=0; $row = mysql_fetch_array($result) ; $i++)
+		{
+		   $result_array[$i] = $row; 
+		}
+		
+		return $result_array;
+	}
+	
+
+
+
 ?>

@@ -29,7 +29,8 @@ case "create":
 
 	if(create_post($params['wng_post'])) {
 
-	echo "successfully created a post";
+	echo_notice('Sucessfully Created Posts!');	
+	redirect_to('posts');
 	}
 
 	break;
