@@ -156,8 +156,6 @@ function update_post($params){
 					return true;
 					}
 
-
-
 }
 
 

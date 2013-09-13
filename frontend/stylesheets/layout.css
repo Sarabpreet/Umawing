@@ -17,14 +17,32 @@ body {
 }
 
 
+.post {
+
+	width:520px;
+	height:auto;
+	margin:20px auto;
+}
+
+.post h2 {
+
+	font-size:20px;
+}
+
+.username {
+
+	background:#D3DCE3;
+	font-weight:lighter;
+	text-transform: uppercase;
+	font-size: 10px;
+}
 
 
+.date {
 
-
-
-
-
-
+	font-style: italic;
+	float:right;
+}
 
 
 /* #Page Styles

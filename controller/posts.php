@@ -35,6 +35,13 @@ case "create":
 
 	break;
 
+case "edit": 
+
+
+   $post=select_post($params['id']);
+
+	break;
+
 
 }
 

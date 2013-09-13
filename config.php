@@ -31,6 +31,7 @@ define('DATABASE','umawings');
 define("WEBSITE",'http://localhost/');
 
 
+
 //$_SERVER['DOCUMENT_ROOT'].'umawings/controllers'
 
 define('SERVER_ROOT',$_SERVER['DOCUMENT_ROOT']);
@@ -48,7 +49,7 @@ define('APP_ROOT','umawings');
 define('MODEL_PATH',SERVER_ROOT.APP_ROOT.DS.'models'.DS);
 define('VIEW_PATH',SERVER_ROOT.APP_ROOT.DS.'view'.DS);
 define('CONTROLLER_PATH',SERVER_ROOT.APP_ROOT.DS.'controller'.DS);
-define('FRONTEND_PATH',SERVER_ROOT.APP_ROOT.DS.'frontend'.DS);
+define('FRONTEND_PATH',SERVER_ROOT.APP_ROOT.DS.'view'.DS.'layouts');
 
 /*
 echo MODEL_PATH."<br>";

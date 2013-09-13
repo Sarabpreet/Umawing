@@ -55,10 +55,10 @@ echo '</div>';
 
  ?>
 <?php 
-
-
 include(VIEW_PATH.$route['controller'].DS.$route['view'].'.php');
 ?>
+
+
 
 
 

@@ -18,21 +18,9 @@ database_connect();
 	function list_posts()
 	{
 		  $connection = database_connect();
-			
-	    $query1 ="SELECT * FROM `wng_post` LIMIT 0, 30 ";
 
-
-	    $query2="select wng_post.wng_id as wng_id, wng_post.wng_title, wng_post.wng_body, wng_post.wng_user_id, wng_users.wng_user_name 
-	              from 
-								  wng_post, wng_users
-							  where 
-									 wng_post.wng_user_id = wng_users.wng_id
-								 order
-								    by wng_post.wng_id desc";
-
-
-$query="SELECT wng_post.wng_id as wng_id,wng_post.wng_title, wng_post.wng_body, wng_post.wng_user_id, 
-		wng_users.wng_user_name from wng_post,wng_users where wng_post.wng_user_id=wng_users.wng_user_id order by wng_post.wng_id desc";
+$query="SELECT wng_post.wng_id as wng_id,wng_post.wng_created_at,wng_post.wng_title, wng_post.wng_body, wng_post.wng_user_id, 
+		wng_users.wng_user_name from wng_post,wng_users where wng_post.wng_user_id=wng_users.wng_user_id order by wng_post.wng_id desc LIMIT 0, 10";
 
 
 
@@ -69,7 +57,7 @@ function select_post($id){
 	*/
 
 			$connection = database_connect();
-			$query=sprintf("SELECT wng_post.wng_title, wng_post.wng_body, wng_post.wng_id, wng_users.wng_user_name
+			$query=sprintf("SELECT wng_post.wng_title, wng_post.wng_created_at, wng_post.wng_body, wng_post.wng_id, wng_users.wng_user_name
 			FROM wng_post, wng_users
 			WHERE wng_post.wng_user_id = wng_post.wng_user_id and wng_post.wng_id=%s",
 			mysql_real_escape_string($id));
@@ -143,6 +131,43 @@ function create_post($params){
 					}
 
 }
+
+
+
+function update_post($params){
+
+
+				/*
+
+				*updates a post 
+				*@param type : array name: $params
+				*@returns : bool
+
+				*/
+
+			$connection = database_connect();
+			$query=sprintf("update wng_post 
+				set wng_title='%s',wng_body='%s',wng_created_at=NOW(),
+				wng_user_id='%s'
+				where wng_id=%s",
+				mysql_real_escape_string($params['wng_title']),
+				mysql_real_escape_string($params['wng_body']),
+				mysql_real_escape_string($params['wng_user_id']),
+				mysql_real_escape_string($params['wng_id'])
+				);
+
+
+					$result=mysql_query($query);
+					if(!$result) {
+						return false;
+					}
+					else {
+					return true;
+					}
+
+}
+
+
 
 
 
