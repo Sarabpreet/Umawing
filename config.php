@@ -14,8 +14,13 @@ $routes=array(
 									 array('url' => '/^posts\/(?P<id>\d+)\/edit$/', 'controller' => 'posts', 'view' => 'edit'),
 									 array('url' => '/^posts\/new$/', 'controller' => 'posts', 'view' => 'new'),
 									 array('url' => '/^posts\/create$/', 'controller' => 'posts', 'view' => 'create'),
-									 array('url' => '/^profile\/new$/', 'controller' => 'profile', 'view' => 'new'),
 									 array('url' => '/^posts\/?$/', 'controller' => 'posts', 'view' => 'index'),
+									 array('url' => '/^posts\/(?P<id>\d+)\/edit$/', 'controller' => 'posts', 'view' => 'edit'),
+									 array('url' => '/^posts\/(?P<id>\d+)\/update$/', 'controller' => 'posts', 'view' => 'update'),
+
+					 				 //array('url' => '/^posts\/update$/', 'controller' => 'posts', 'view' => 'update'),
+									 // array('url' => '/^profile\/new$/', 'controller' => 'profile', 'view' => 'new')
+
 									 
 
 

@@ -37,8 +37,17 @@ case "create":
 
 case "edit": 
 
-
    $post=select_post($params['id']);
+   break;
+
+case "update": 
+
+
+	if(update_post($params['wng_post'])) {
+
+	echo_notice('Sucessfully Created Posts!');	
+	redirect_to('posts');
+	}
 
 	break;
 
