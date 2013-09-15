@@ -20,8 +20,7 @@
 	</div>
 
 	<div class="edit"><a href="<?php echo '/'.APP_ROOT.'/';?>posts/<?php echo $post['wng_id'];?>/edit">[edit]</a></div>
-
-<div class="delete"><a href="#">[delete]</a></div>
+	<div class="delete"><a href="<?php echo '/'.APP_ROOT.'/';?>posts/<?php echo $post['wng_id'];?>/delete">[delete]</a></div>
 </div>
 
 

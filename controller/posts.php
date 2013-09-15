@@ -42,15 +42,26 @@ case "edit":
 
 case "update": 
 
-
+	$params['wng_post']['wng_id']=$params['id'];
+	
 	if(update_post($params['wng_post'])) {
-
-	echo_notice('Sucessfully Created Posts!');	
+	echo_notice('Sucessfully updated Posts!');	
 	redirect_to('posts');
 	}
 
 	break;
 
+case "delete": 
+
+if(delete_post($params['id'])) {
+
+
+echo_notice('sucessfully Deleted post');
+redirect_to('posts');
+}
+
+
+break;
 
 }
 

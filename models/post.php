@@ -170,6 +170,34 @@ function update_post($params){
 
 
 
+function delete_post($wng_id){
+
+
+				/*
+
+				*deletes a post 
+				*@param type : int name: $params
+				*@returns : bool
+
+				*/
+
+			$connection = database_connect();
+			$query=sprintf("delete from wng_post
+				where wng_id=%s",
+				mysql_real_escape_string($wng_id)
+				);
+
+
+					$result=mysql_query($query);
+					if(!$result) {
+						return false;
+					}
+					else {
+					return true;
+					}
+
+}
+
 
 		?>
 
