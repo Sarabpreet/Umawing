@@ -41,120 +41,80 @@ $path='frontend/';
 </head>
 <body>
 
-<div class="topm"></div>
-
 	<!-- Primary Page Layout
 	================================================== -->
 
-	<!-- Delete everything in this .container and get started on your own site! -->
-
-
-
-		<div class="container">
-
+<nav>
 	
-	<h1 class="logo three column" >uma wings</h1>
+<h1 class="logo">Project Wings</h1>
+
+<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="#">Post</a></li>
+	<li><a href="#">Resume</a></li>
+	<li><a href="#">Settings</a></li>
+</ul>
+
+<div class="nav_name">John Doe|Sign Out</div>
+</nav>
+
+
+<header>
+	
+<div class="pictue"><img src="#" alt="John Doe" width="100" heigh="100"></div>
+<h2>Hello, John Doe</h2>
+<div class="message">its 9:01 Am in the morning and you are using mozilla firefox on windows 7</div>
+
+<form action="post">
+	
+<input type="text" value="Hello Sarabpreet This is your update box, you can update this with in 140 characters">
+<input type="update" value="update">
+</form>
+
+
+</header>
+
+<div class="content">
+	
+<div class="post">
+	
+		<h2>why uma wings is important for us?</h2>
+		<h5>this post was poted on 22nd october 2013, by John Doe</h5>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, unde dolores a quae praesentium fugit nobis provident? Laborum, quod tempora hic ab repellat laboriosam asperiores voluptate ullam vitae harum provident!</p>
+
+		<div class="readmore">readmore</div>
+
+		</div>
+
+<!---this is the end of post-->
+
+		<div class="post">
+			
+		<h2>why uma wings is important for us?</h2>
+		<h5>this post was poted on 22nd october 2013, by John Doe</h5>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, unde dolores a quae praesentium fugit nobis provident? Laborum, quod tempora hic ab repellat laboriosam asperiores voluptate ullam vitae harum provident!</p>
+
+		<div class="readmore">readmore</div>
+
+		</div>
+
+<!---this is the end of post-->
+
+
+</div>	
+<!-- End of content
+	================================================== -->
 
 
 
-			<nav class="six column offset-by-six">
-
-			<ul>
-			<li><a href="#">About</a></li>
-			<li><a href="#">how it works</a></li>
-			<li><a href="#">sign up</a></li>
-			</ul>
-
-			</nav>
-
-<section class="one-third columns">
+<footer>
 	
 
-	<h2>introducing something cool</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni nisi accusantium ipsa facere maxime inventore perferendis voluptatum quas consequuntur laudantium. Veniam, doloribus doloremque quis molestiae deleniti numquam possimus eaque beatae.</p>
-</section>
+	<div class="border"></div>
+
 		
-	<section class="one-third column">
-	
-
-	<h3>been here before?: login</h3>
-
-	<form action="#">
-		
-<input type="email">
-<input type="password">
-<input type="submit">
-	</form>
-
-</section>
-		
-
-	<section class="one-third column">
-
-	<h3>been here before?: login</h3>
-
-			<form action="#">
-				
-		<input type="email">
-		<input type="password">
-		<input type="submit">
-			</form>
-
-	</section>
-
-
-
-	<section class="one-third column">
-		
-	<h3>new to uma wings? : <strong>sign up here.</strong></h3>
-
-	<form action="#">
-
-<input type="text">		
-<input type="email">
-<input type="password">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aperiam, amet, deserunt repellat quae eveniet aliquid iusto tempora dolores a fugiat necessitatibus adipisci excepturi molestias quasi nostrum magnam sequi numquam.</p>
-<input type="submit">
-	</form>
-
-</section>
-
-
-	</div>
-
-
-<div class="container">
-	
-<section class="one-third column">
-	
-<h4>topic...</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, nobis, veritatis, reiciendis aliquam perferendis maxime debitis possimus incidunt et blanditiis aperiam cumque nam! Aliquam, error sequi neque quos repellendus veritatis.</p>
-</section>
-
-<section class="one-third column">
-	
-<h4>topic...</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, nobis, veritatis, reiciendis aliquam perferendis maxime debitis possimus incidunt et blanditiis aperiam cumque nam! Aliquam, error sequi neque quos repellendus veritatis.</p>
-</section>
-
-<section class="one-third column">
-	
-<h4>topic...</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, nobis, veritatis, reiciendis aliquam perferendis maxime debitis possimus incidunt et blanditiis aperiam cumque nam! Aliquam, error sequi neque quos repellendus veritatis.</p>
-</section>
-
-
-
-
-</div>
-
-<div class="container">
-	
-<footer class="sixteen columns">
-	
-	<nav>
-		
-
 		<ul>
 			<li><a href="#">Home</a></li>
 			<li><a href="#">About</a></li>
@@ -163,18 +123,14 @@ $path='frontend/';
 			<li><a href="#">Developers</a></li>
 			<li><a href="#">Statistics</a></li>
 		</ul>
-	</nav>
-
-<div class="credit">
 	
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia provident est minus veritatis maiores quam ipsam. Ipsam, inventore, consequuntur optio esse eum consequatur suscipit velit ab laudantium magnam autem voluptate?</p>
-</div>
+	<div class="credit">OPEN GPL LICENCE | <a href="#">Fork us on Github</a></div>
+
 </footer>
 
-</div>
+	<!-- End Document
+	================================================== -->
 
-<!-- End Document
-================================================== -->
 </body>
 </html>
 
