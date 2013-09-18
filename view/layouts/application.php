@@ -1,5 +1,6 @@
 <?php 
-$path='frontend/';
+$path=FRONTEND;
+
 
 
 
@@ -25,10 +26,26 @@ $path='frontend/';
 
 	<!-- CSS
   ================================================== -->
+<script type="text/javascript" src="<?php echo '/'.APP_ROOT.'/';?>frontend/js/tinymce/tinymce.min.js"></script>
 
-	<link rel="stylesheet" href="<?php echo $path;?>stylesheets/base.css">
-	<link rel="stylesheet" href="<?php echo $path;?>stylesheets/skeleton.css">
-	<link rel="stylesheet" href="<?php echo $path;?>stylesheets/layout.css">
+	<link rel="stylesheet" href="<?php echo '/'.APP_ROOT.'/';?>frontend/stylesheets/base.css">
+	<link rel="stylesheet" href="<?php echo '/'.APP_ROOT.'/';?>frontend/stylesheets/skeleton.css">
+	<link rel="stylesheet" href="<?php echo '/'.APP_ROOT.'/';?>frontend/stylesheets/layout.css">
+
+
+<script type="text/javascript">
+tinymce.init({
+    selector: "textarea",
+    plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen",
+        "insertdatetime media table contextmenu paste"
+    ],
+    toolbar: "styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+});
+</script>
+
+
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

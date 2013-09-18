@@ -5,7 +5,7 @@
 	<input name="wng_post[wng_title]" size="50" type="text" value="<?php echo $post["wng_title"]; ?>">
 
 	<br>
-	<textarea name="wng_post[wng_body]" id="postbody" cols="30" rows="10">
+	<textarea class="text_tiny" name="wng_post[wng_body]" id="postbody" cols="30" rows="10">
 		
 <?php echo $post["wng_body"]; ?>
 

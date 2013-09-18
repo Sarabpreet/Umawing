@@ -17,7 +17,9 @@ $routes=array(
 									 array('url' => '/^posts\/?$/', 'controller' => 'posts', 'view' => 'index'),
 									 array('url' => '/^posts\/(?P<id>\d+)\/edit$/', 'controller' => 'posts', 'view' => 'edit'),
 									 array('url' => '/^posts\/(?P<id>\d+)\/update$/', 'controller' => 'posts', 'view' => 'update'),
- 									array('url' => '/^posts\/(?P<id>\d+)\/delete$/', 'controller' => 'posts', 'view' => 'delete')
+ 									array('url' => '/^posts\/(?P<id>\d+)\/delete$/', 'controller' => 'posts', 'view' => 'delete'),
+									array('url' => '/^profile\/$/', 'controller' => 'profile', 'view' => 'new')
+ 									
 
 
 					 				 //array('url' => '/^posts\/update$/', 'controller' => 'posts', 'view' => 'update'),
@@ -39,6 +41,7 @@ define("WEBSITE",'http://localhost/');
 
 
 
+
 //$_SERVER['DOCUMENT_ROOT'].'umawings/controllers'
 
 define('SERVER_ROOT',$_SERVER['DOCUMENT_ROOT']);
@@ -57,6 +60,8 @@ define('MODEL_PATH',SERVER_ROOT.APP_ROOT.DS.'models'.DS);
 define('VIEW_PATH',SERVER_ROOT.APP_ROOT.DS.'view'.DS);
 define('CONTROLLER_PATH',SERVER_ROOT.APP_ROOT.DS.'controller'.DS);
 define('FRONTEND_PATH',SERVER_ROOT.APP_ROOT.DS.'view'.DS.'layouts');
+define('FRONTEND',SERVER_ROOT.APP_ROOT.DS.'view'.DS.'layouts'.DS);
+define('FRONTEND1',SERVER_ROOT.APP_ROOT.DS.'frontend/');
 
 /*
 echo MODEL_PATH."<br>";
