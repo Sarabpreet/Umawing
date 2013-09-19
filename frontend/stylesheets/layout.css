@@ -19,11 +19,16 @@ body {
 
 .post {
 
-	width:520px;
+	width:960px;
 	height:auto;
 	margin:20px auto;
 }
 
+.post img {
+
+	text-align: center;
+	margin: 0 auto;
+}
 .post h2 {
 
 	font-size:20px;

@@ -71,7 +71,7 @@ echo CONTROLLER_PATH;
 
 //dbinclude 
 
-include "database.php";
-include"controller.php";
-
+include "lib/database.php";
+include"lib/controller.php";
+include"lib/model.php";
 ?>
