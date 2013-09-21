@@ -2,8 +2,6 @@
 $path='frontend/';
 
 
-
-
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
@@ -26,9 +24,9 @@ $path='frontend/';
 	<!-- CSS
   ================================================== -->
 
-	<link rel="stylesheet" href="<?php echo $path;?>stylesheets/base.css">
-	<link rel="stylesheet" href="<?php echo $path;?>stylesheets/skeleton.css">
-	<link rel="stylesheet" href="<?php echo $path;?>stylesheets/layout.css">
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -43,38 +41,44 @@ $path='frontend/';
 
 	<!-- Primary Page Layout
 	================================================== -->
-
-<nav>
+<header>
+<nav class="container">
 	
-<h1 class="logo">Project Wings</h1>
+<a href="#"><h1 class="logo two column offset-by-three">Project Wings</h1></a>
+<style>
+	
 
+	ul li a {
+
+		color:#ffffff;
+	}
+</style>
 <ul>
 	<li><a href="#">Home</a></li>
 	<li><a href="#">Post</a></li>
 	<li><a href="#">Resume</a></li>
 	<li><a href="#">Settings</a></li>
+	<li class="offset-by-three"><a href="#">John Doe </a>| <a href="#">Sign Out</a></li>
 </ul>
 
-<div class="nav_name">John Doe|Sign Out</div>
 </nav>
-
-
-<header>
-	
-<div class="pictue"><img src="#" alt="John Doe" width="100" heigh="100"></div>
-<h2>Hello, John Doe</h2>
-<div class="message">its 9:01 Am in the morning and you are using mozilla firefox on windows 7</div>
-
-<form action="post">
-	
-<input type="text" value="Hello Sarabpreet This is your update box, you can update this with in 140 characters">
-<input type="update" value="update">
-</form>
-
-
 </header>
 
-<div class="content">
+<div class="homemsg container">
+	
+	<div class="pictue"><img src="images/dp.png" alt="John Doe" width="106" heigh="107"></div>
+	<h2>Hello, John Doe</h2>
+	<div class="message">its 9:01 Am in the morning and you are using mozilla firefox on windows 7</div>
+	<form action="post">
+	<input type="text" value="Hello Sarabpreet This is your update box, you can update this with in 140 characters">
+	<input type="submit">
+	</form>
+
+</div>
+
+
+
+<div class="content container">
 	
 <div class="post">
 	

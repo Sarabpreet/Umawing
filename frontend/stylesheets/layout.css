@@ -12,46 +12,64 @@
 
 
 body {
+	font-size: 1em;
+	background:#e2e8ed;
 
-	background:#e6e6e6;
 }
 
 
-.post {
+header {
+	background: #407bbc;
+	font-size: .9em;
+	background:url('../images/navbg.jpg');
 
-	width:960px;
-	height:auto;
-	margin:20px auto;
 }
 
-.post img {
+header nav a h1.logo {
+	background:url('../images/logo.png');
+	background-repeat:no-repeat;
+	width:92px;
+	height:26px;
+	color: transparent;
+	font:0/0 a;
+	margin:15px auto;
 
-	text-align: center;
-	margin: 0 auto;
 }
-.post h2 {
 
-	font-size:20px;
-}
 
-.username {
+nav ul li {
+	display:inline-block;
+	margin:15px auto;
+	padding: 10px 10px;
+	line-height: 20px;}
 
-	background:#D3DCE3;
-	font-weight:lighter;
+nav ul li a {
+
+
+	font-family: 'tahoma';
+	font-weight: bold;
 	text-transform: uppercase;
-	font-size: 10px;
+	color:#ffffff;
+	text-decoration: none;
+	word-spacing: 2px;
+
 }
 
+nav ul li.name a{
 
-.date {
 
-	font-style: italic;
-	float:right;
 }
-
 
 /* #Page Styles
 ================================================== */
+
+
+.homemsg, .homemsg form {
+
+	text-align: center;
+	margin: 0 auto;
+
+}
 
 /* #Media Queries
 ================================================== */
