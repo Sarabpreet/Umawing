@@ -1,6 +1,7 @@
 <?php
 
-
+$post_validations=array('title'=>'/^[[:alnum:][:punct:][:space:]]{1,140}$/',
+				  'body'=>'/^[[:alnum:][:punct:][:space:]]{1,2000}$/');
 
 
 
@@ -14,6 +15,9 @@ database_connect();
 	 * returns array of posts from database
 	 * 
 	*/
+
+	$post_validations=array('title'=>'/^[[:alnum:][:punct:][:space:]]{1,140}$/',
+				  'body'=>'/^[[:alnum:][:punct:][:space:]]{1,2000}$/');
 
 	function list_posts()
 	{

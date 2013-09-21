@@ -11,29 +11,27 @@ and check them.
 function validate($validations,$params) {
 
 
-	$error=array('total_errors'=>0);
-	foreach ($validations  as $fields => $validation) {
+	$errors=array('total_errors'=>0);
+	foreach ($validations  as $field => $validation) {
 	if(!preg_match($validation,$params[$field])){
 	$errors['total_errors']++;
 	$error[$field]=true;
 		}
 	}
 
-	if($errors['total_errors']>0) {
-
+	if($errors['total_errors'] > 0) {
 		return $errors;
 	}
 	else {
-
 		return false;
 	}
 }
 
 
-$post_validations=array('title'=>'/^[[:alnum:][:punct:][:space:]]{1,100}$/');
 
+/*
 $params=array('title'=>'This is the title');
-
-validate($post_validations,$params);
+print_r(validate($post_validations,$params));
+*/
 
  ?>

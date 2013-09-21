@@ -25,10 +25,16 @@ case "new":
 
 	break;
 
-case "create": 
+	case "create": 
+	$errors = validate($post_validations,$params['wng_post']);
+	if($errors) {
 
-	if(create_post($params['wng_post'])) {
-
+		$route['view']='new';
+		print_r($errors);
+		echo_warning('Please Correct the bellow errors');
+	}
+	else {
+	create_post($params['wng_post']);
 	echo_notice('Sucessfully Created Posts!');	
 	redirect_to('posts');
 	}
