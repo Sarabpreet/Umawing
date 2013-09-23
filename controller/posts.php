@@ -17,7 +17,6 @@ case "index":
 
 	$posts=list_posts();
 
-
 	break;
 
 case "new": 
@@ -26,17 +25,16 @@ case "new":
 	break;
 
 	case "create": 
-	$errors = validate($post_validations,$params['wng_post']);
+    $errors = validate($post_validations,$params['wng_post']);
 	if($errors) {
-
 		$route['view']='new';
-		print_r($errors);
+
 		echo_warning('Please Correct the bellow errors');
 	}
 	else {
-	create_post($params['wng_post']);
-	echo_notice('Sucessfully Created Posts!');	
-	redirect_to('posts');
+		create_post($params['wng_post']);
+		echo_warning('Sucessfully Created Posts!');	
+		redirect_to('posts');
 	}
 
 	break;

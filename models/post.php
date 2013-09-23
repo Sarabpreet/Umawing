@@ -1,14 +1,11 @@
 <?php
 
-$post_validations=array('title'=>'/^[[:alnum:][:punct:][:space:]]{1,140}$/',
-				  'body'=>'/^[[:alnum:][:punct:][:space:]]{1,2000}$/');
-
-
+$post_validations=array('wng_title'=>'/^[[:alnum:][:punct:][:space:]]{1,100}$/',
+						'wng_body'=> '/^[[:alnum:][:punct:][:space:]]{1,2000}$/');
 
 database_connect(); 
 
 //calling database_connect
-
 
 
 	/**
@@ -16,8 +13,7 @@ database_connect();
 	 * 
 	*/
 
-	$post_validations=array('title'=>'/^[[:alnum:][:punct:][:space:]]{1,140}$/',
-				  'body'=>'/^[[:alnum:][:punct:][:space:]]{1,2000}$/');
+
 
 	function list_posts()
 	{
@@ -25,9 +21,6 @@ database_connect();
 
 $query="SELECT wng_post.wng_id as wng_id,wng_post.wng_created_at,wng_post.wng_title, wng_post.wng_body, wng_post.wng_user_id, 
 		wng_users.wng_user_name from wng_post,wng_users where wng_post.wng_user_id=wng_users.wng_user_id order by wng_post.wng_id desc LIMIT 0, 10";
-
-
-
 			
 			$result = mysql_query($query);		
 			
@@ -43,11 +36,6 @@ $query="SELECT wng_post.wng_id as wng_id,wng_post.wng_created_at,wng_post.wng_ti
 			
 	}
 	
-	 
-	
-
-
-
 
 function select_post($id){
 

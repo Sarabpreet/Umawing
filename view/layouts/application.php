@@ -70,11 +70,18 @@ tinymce.init({
 echo '<div class="notice">';
 echo $_SESSION['echo']['notice'];
 echo '</div>';
-
-
 }
-
  ?>
+
+ <?php if($_SESSION['echo']['warning']) {
+
+echo '<div class="warning">';
+echo $_SESSION['echo']['warning'];
+echo '</div>';
+}
+ ?>
+
+
 <?php 
 include(VIEW_PATH.$route['controller'].DS.$route['view'].'.php');
 ?>

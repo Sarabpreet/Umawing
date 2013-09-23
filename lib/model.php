@@ -10,7 +10,6 @@ and check them.
 
 function validate($validations,$params) {
 
-
 	$errors=array('total_errors'=>0);
 	foreach ($validations  as $field => $validation) {
 	if(!preg_match($validation,$params[$field])){
@@ -28,10 +27,11 @@ function validate($validations,$params) {
 }
 
 
+$post_validations=array('title'=>'/^[[:alnum:][:punct:][:space:]]{1,100}$/',
+						'body'=> '/^[[:alnum:][:punct:][:space:]]{1,2000}$/');
 
-/*
-$params=array('title'=>'This is the title');
-print_r(validate($post_validations,$params));
-*/
+$params=array('title'=>'this is spartaaaaaaaa');
+
+
 
  ?>
