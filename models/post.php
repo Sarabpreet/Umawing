@@ -3,6 +3,9 @@
 $post_validations=array('wng_title'=>'/^[[:alnum:][:punct:][:space:]]{1,100}$/',
 						'wng_body'=> '/^[[:alnum:][:punct:][:space:]]{1,2000}$/');
 
+
+
+
 database_connect(); 
 
 //calling database_connect

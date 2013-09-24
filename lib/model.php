@@ -12,9 +12,10 @@ function validate($validations,$params) {
 
 	$errors=array('total_errors'=>0);
 	foreach ($validations  as $field => $validation) {
+
 	if(!preg_match($validation,$params[$field])){
-	$errors['total_errors']++;
-	$error[$field]=true;
+		$errors['total_errors']++;
+		$errors[$field]=true;
 		}
 	}
 
@@ -26,12 +27,10 @@ function validate($validations,$params) {
 	}
 }
 
+/*
+$post_validations=array('wng_title'=>'/^[[:alnum:][:punct:][:space:]]{1,100}$/');
+$params=array('wng_title'=>"",'wng_body'=>"");
+print_r(validate($post_validations,$params));
 
-$post_validations=array('title'=>'/^[[:alnum:][:punct:][:space:]]{1,100}$/',
-						'body'=> '/^[[:alnum:][:punct:][:space:]]{1,2000}$/');
-
-$params=array('title'=>'this is spartaaaaaaaa');
-
-
-
+*/
  ?>

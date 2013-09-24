@@ -1,8 +1,6 @@
 
 
 <div class="post">
-
-
 	<h2>
 <a href="
 <?php echo '/'.APP_ROOT.'/';?>posts/<?php echo $post['wng_id'];?>">
