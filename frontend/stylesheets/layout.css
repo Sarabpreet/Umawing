@@ -1,5 +1,4 @@
 
-
 /* Table of Content
 ==================================================
 	#Site Styles
@@ -71,6 +70,12 @@ nav ul li.name a{
 
 }
 
+
+.footer {
+	background: #407bbc;
+	background:url('../images/navbg.jpg');
+	text-align:center;
+}
 /* #Media Queries
 ================================================== */
 
