@@ -112,11 +112,12 @@ $path='frontend/';
 	================================================== -->
 
 
-
-<footer>
+	<div class="border"></div>
+	
+<footer class="container">
 	
 
-	<div class="border"></div>
+
 
 		
 		<ul>
@@ -128,7 +129,7 @@ $path='frontend/';
 			<li><a href="#">Statistics</a></li>
 		</ul>
 	
-	<div class="credit">OPEN GPL LICENCE | <a href="#">Fork us on Github</a></div>
+	<div class="credit three column">OPEN GPL LICENCE | <a href="#">Fork us on Github</a></div>
 
 </footer>
 
